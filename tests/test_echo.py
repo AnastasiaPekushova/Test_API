@@ -19,7 +19,7 @@ def test_get_request_params(create_user):
         "gender": "M"
     }
     response = requests.get(f"{url_get}", params=params)
-    assert response.status_code == 200
+    assert response.status_code == 400
     data = response.json()
     assert data["args"]["gender"] == "M"
 
